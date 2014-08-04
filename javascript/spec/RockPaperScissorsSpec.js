@@ -8,6 +8,13 @@ describe("Rock-Paper-Scissors", function() {
     game = new Game(player1, player2);
   });
 
+  describe('game setup', function() {
+    it('should know players names', function() {
+      player1.nombre('Alex')
+      expect(player1.nombre).toBe('Alex');
+    });
+  });
+
   describe('winning and losing', function() {
 
     describe('rock', function() {

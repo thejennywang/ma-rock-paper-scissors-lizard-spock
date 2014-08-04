@@ -26,3 +26,5 @@ Game.prototype.winner = function() {
 Game.prototype._isSamePick = function () {
 	 return this.player1.pick === this.player2.pick;
 };
+
+
