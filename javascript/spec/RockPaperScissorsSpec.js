@@ -1,11 +1,11 @@
 describe("Rock-Paper-Scissors", function() {
 
+  var player1, player2, game;
+  
   beforeEach(function() {
-
-    player1 = new Player();
-    player2 = new Player();
+    player1 = new Player('Alex');
+    player2 = new Player('Bob');
     game = new Game(player1, player2);
-
   });
 
   describe('winning and losing', function() {
@@ -77,7 +77,6 @@ describe("Rock-Paper-Scissors", function() {
     describe('any identical picks', function() {
 
       it('should result in no winner', function() {
-
         var drawGameResults = ['rock', 'paper', 'scissors'].map(function(x) {
           player1.picks(x);
           player2.picks(x);
