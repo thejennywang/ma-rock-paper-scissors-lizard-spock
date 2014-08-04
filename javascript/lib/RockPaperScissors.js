@@ -7,28 +7,31 @@ Player.prototype.picks = function(pick) {
   this.pick = pick;
 };
 
-var PAIRS = {
-	rock:     { beats: 'scissors' },
-	paper:    { beats: 'rock'     },
-	scissors: { beats: 'paper'    }
-}
+Player.prototype.defeats = function(opponent) {
+	return Game.prototype.PAIRS[this.player1.pick]['beats'].indexOf(opponent.pick) !== -1
+
+};
 
 function Game(player1, player2) {
   this.player1 = player1;
   this.player2 = player2;
 };
 
-Game.prototype.winner = function() {
-	if (this.player1.pick === this.player2.pick){
-		return null
-	}
+Game.prototype.PAIRS = {
+	rock:     { beats: 'scissors' },
+	paper:    { beats: 'rock'     },
+	scissors: { beats: 'paper'    },
+	spock: 		{ beats: ['scissors', 'rock']}
+}
 
-	if(PAIRS[this.player1.pick]['beats'] == this.player2.pick) {
+Game.prototype.winner = function() {
+	// if (this.player1.pick === this.player2.pick){
+	// 	return null
+	// }
+
+	if(this.player1.defeats(this.player2)) {
 	  return this.player1;
 	} else {
 		return this.player2;
 	}
 };
-
-
-
