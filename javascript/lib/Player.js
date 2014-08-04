@@ -13,4 +13,5 @@ Player.prototype.defeats = function(opponent) {
 
 Player.prototype.nombre = function(nombre) {
 	this.nombre = nombre;
-};
+}; 
+

@@ -13,6 +13,13 @@ describe("Rock-Paper-Scissors", function() {
       player1.nombre('Alex')
       expect(player1.nombre).toBe('Alex');
     });
+
+    it('should let the players know the outcome', function() {
+      player1.picks('rock');
+      player2.picks('scissors');
+      expect(game.winner()).toBe(player1);
+      expect(game.victoryMessage()).toEqual('Alex\'s rock beats Bob\'s scissors!');
+    });
   });
 
   describe('winning and losing', function() {

@@ -23,8 +23,10 @@ Game.prototype.winner = function() {
 	}
 };
 
-Game.prototype._isSamePick = function () {
+Game.prototype._isSamePick = function() {
 	 return this.player1.pick === this.player2.pick;
 };
 
-
+Game.prototype.victoryMessage = function() {
+	return this.player1.name + "\'s " + this.player1.pick + " beats " + this.player2.name + "\'s " + this.player2.pick + "!";
+};
