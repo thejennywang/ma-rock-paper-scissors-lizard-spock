@@ -4,10 +4,16 @@ describe("Rock-Paper-Scissors", function() {
   
   beforeEach(function() {
     player1 = new Player('Alex');
-    player2 = new Player('Bob');
+    player2 = new Player('Computer');
     game = new Game(player1, player2);
   });
 
+  describe("random choice", function() {
+    it('should randomise computer\'s choice', function() {
+      expect(player2.)
+    })
+
+  })
   describe('victory messages', function() {
     it('should know players names', function() {
       expect(player1.name).toBe('Alex');
