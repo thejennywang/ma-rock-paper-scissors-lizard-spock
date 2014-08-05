@@ -11,6 +11,8 @@ $(document).ready(function(){
 
 		$('#result').prepend('<li>' + game.victoryMessage()+ '</li>').slideDown();
 
-		$('#result li:gt(3)').fadeOut();
+		$('#result li:gt(3)').fadeOut(function(){
+			$(this).remove()
+		})
 	})
 })
