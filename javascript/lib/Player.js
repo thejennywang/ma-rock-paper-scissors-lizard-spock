@@ -6,12 +6,3 @@ function Player(name) {
 Player.prototype.picks = function(pick) {
   this.pick = pick;
 };
-
-Player.prototype.defeats = function(opponent) {
-	return Game.prototype.PAIRS[this.pick]['beats'].indexOf(opponent.pick) !== -1
-};
-
-Player.prototype.nombre = function(nombre) {
-	this.nombre = nombre;
-}; 
-

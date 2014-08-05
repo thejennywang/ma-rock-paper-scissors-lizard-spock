@@ -8,17 +8,20 @@ describe("Rock-Paper-Scissors", function() {
     game = new Game(player1, player2);
   });
 
-  describe('game setup', function() {
+  describe('victory messages', function() {
     it('should know players names', function() {
-      player1.nombre('Alex')
-      expect(player1.nombre).toBe('Alex');
+      expect(player1.name).toBe('Alex');
     });
 
-    it('should let the players know the outcome', function() {
+    it('should specify the winning verb', function() {
+      expect(game._victoryVerbFor('rock', 'scissors')).toEqual('crushes');
+    });
+
+    it('should let the players know if there is a winner', function() {
       player1.picks('rock');
       player2.picks('scissors');
       expect(game.winner()).toBe(player1);
-      expect(game.victoryMessage()).toEqual('Alex\'s rock beats Bob\'s scissors!');
+      expect(game.victoryMessage()).toEqual('Rock crushes scissors - Alex wins!');
     });
   });
 
@@ -207,6 +210,13 @@ describe("Rock-Paper-Scissors", function() {
 
         expect(drawGameResults).toEqual([null, null, null, null, null]);
 
+      });
+
+      it('result in victory message declaring draw', function(){
+      player1.picks('rock');
+      player2.picks('rock');
+      expect(game.winner()).toBe(null);
+      expect(game.victoryMessage()).toEqual('It was a draw!');
       });
 
     });
