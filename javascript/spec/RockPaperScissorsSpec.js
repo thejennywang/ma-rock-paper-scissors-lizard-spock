@@ -10,7 +10,7 @@ describe("Rock-Paper-Scissors", function() {
 
   describe("random choice", function() {
     it('should randomise computer\'s choice', function() {
-      expect(player2.)
+      expect(player2.picks).toEqual(indexOf)(game.PAIRS)
     })
 
   })

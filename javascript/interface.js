@@ -9,9 +9,6 @@ $(document).ready(function(){
 		player1.picks($(this).data('pick'));
 		player2.picks(computerChoices[Math.floor(Math.random() * 4)]);
 
-
-		$('#result').prepend('<li>' + game.victoryMessage()+ '</li>');
+		$('#result').prepend('<li>' + game.victoryMessage()+ '</li>')
 	})
-
 })
-

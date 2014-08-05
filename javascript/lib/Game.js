@@ -45,6 +45,3 @@ Game.prototype.victoryMessage = function() {
 Game.prototype._victoryVerbFor = function(pick, opponentPick) {
 	return this.PAIRS[pick][opponentPick];
 }
-
-
-Game.prototype.randomChoice
