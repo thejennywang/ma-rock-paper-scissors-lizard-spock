@@ -10,5 +10,7 @@ $(document).ready(function(){
 		player2.picks(computerChoices[Math.floor(Math.random() * 4)]);
 
 		$('#result').prepend('<li>' + game.victoryMessage()+ '</li>').slideDown();
+
+		$('#result li:gt(3)').fadeOut();
 	})
 })
