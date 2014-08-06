@@ -3,28 +3,51 @@
 <head>
 	<meta charset="UTF-8">
 	<title>RockPaperScissorsLizardSpock!</title>
-		<link rel="stylesheet" href="../public/css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<h1>Rock Paper Scissors Lizard Spock!</h1>
-		<script src="../public/lib/jquery-2.1.1.min.js"></script>
-		<script src="../public/lib/Game.js"></script>
-		<script src="../public/lib/Player.js"></script>
-		<script src="../public/lib/interface.js"></script>
+	<section class='game'>
 
-	<section class="choices">
-		<img src="../public/images/rock.png" data-pick='rock'>
-		<img src="../public/images/paper.png" data-pick='paper'>
-		<img src="../public/images/scissors.png" data-pick='scissors'>
-		<img src="../public/images/lizard.png" data-pick='lizard'>
-		<img src="../public/images/spock.png" data-pick='spock'>
+		<section class="choices">
+			<img src="images/rock.png" data-pick='rock'>
+			<img src="images/paper.png" data-pick='paper'>
+			<img src="images/scissors.png" data-pick='scissors'>
+			<img src="images/lizard.png" data-pick='lizard'>
+			<img src="images/spock.png" data-pick='spock'>
+		</section>
+
+		<ul>
+			<h2 id='result'></h2>
+			<script src="lib/Game.js"></script>
+			<script src="lib/Player.js"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		</ul>
+
+		<script>
+		$(document).ready(function(){
+			var player1 = new Player("Alex")
+			var player2 = new Player("Computer")
+			var game = new Game(player1, player2)
+			var computerChoices = ["rock", "paper", "scissors", "lizard", "spock"]
+			
+			$('.choices img').on('click', function(){
+				player1.picks($(this).data('pick'));
+				player2.picks(computerChoices[Math.floor(Math.random() * 4)]);
+
+				$('#result').prepend('<li>' + game.victoryMessage()+ '</li>').slideDown();
+
+
+				$('#result li:gt(3)').fadeOut(function(){
+					$(this).remove()
+				});
+			});
+		});
+		</script>
 	</section>
-
-<ul>
-	<h2 id='result'></h2>
-</ul>
 </body>
+
 <footer>
 	<div id="makersacademy-logo">
 		<a href="http://www.makersacademy.com/">
@@ -32,14 +55,14 @@
 		</a>
 	</div>
 	<div id="technologies">
-    <p>
-      I built this page at 
-      <a href="http://www.makersacademy.com">Makers Academy,
-      a highly selective 12 week coding course in London</a>.
-    </p>
-    <p>
-      This website is built using Javascript, jQuery Sinatra, RSpec, HTML and CSS.
-    </p>
-  </div>
-</footer>
-</html>
+		<p>
+			I built this page at 
+			<a href="http://www.makersacademy.com">Makers Academy,
+				a highly selective 12 week coding course in London</a>.
+			</p>
+			<p>
+				This website is built using Javascript, jQuery Sinatra, RSpec, HTML and CSS.
+			</p>
+		</div>
+	</footer>
+	</html>
