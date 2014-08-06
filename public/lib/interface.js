@@ -5,7 +5,6 @@ $(document).ready(function(){
 	var computerChoices = ["rock", "paper", "scissors", "lizard", "spock"]
 
 	$('.choices img').on('click', function(){
-		console.log("hello world");
 		player1.picks($(this).data('pick'));
 		player2.picks(computerChoices[Math.floor(Math.random() * 4)]);
 
