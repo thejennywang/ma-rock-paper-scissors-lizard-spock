@@ -2,4 +2,4 @@ Makers Academy - Week 7 Project
 ==============================
 Learning JavaScript through building a Rock Paper Scissors Lizard Spock Game
 
-Link: therpslsgame.herokuapp.com
+Link: http://therpslsgame.herokuapp.com/
